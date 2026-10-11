@@ -4,7 +4,7 @@ window.addEventListener('DOMContentLoaded', () => {
     confetti({ particleCount: 600, spread: 60, origin: { x: 0, y: 0.8 } });
     confetti({ particleCount: 600, spread: 60, origin: { x: 1, y: 0.8 } });
     confetti({ particleCount: 200, spread: 90, origin: { x: 0.5, y: 0.3 } });
-  }, 5000); // 0.5 segundos después de que la página se haya cargado
+  }, 500); // 0.5 segundos después de que la página se haya cargado
 });
 
 // CUENTA REGRESIVA
