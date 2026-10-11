@@ -1,0 +1,279 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent; /* Elimina el recuadro azul al tocar en móviles */
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* En celulares se expande a pantalla completa / en PC mantiene forma de app */
+.mobile-container {
+  width: 100%;
+  max-width: 430px; /* Tamaño máximo tipo iPhone Pro Max */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+}
+
+.card {
+  background: #bee5f7;
+  width: 100%;
+  padding: 20px 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+/* Contenedor de la imagen */
+.card-header-img {
+  width: 100%;
+  line-height: 0; /* Elimina espacios en blanco no deseados abajo de la imagen */
+  padding-bottom: 20px;
+}
+
+/* La imagen se ajusta automáticamente al ancho y muestra el alto completo */
+.banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+.card-ubi-cont {
+  background: #FDF8E9;
+  width: 100%;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.card-ubi-img {
+  width: 100%;
+  padding-top: 20px;
+  line-height: 0; /* Elimina espacios en blanco no deseados abajo de la imagen */
+  padding-bottom: 20px;
+}
+
+.uni_img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+.badge {
+  display: inline-block;
+  background-color: #e8f5e9;
+  color: #009CD1;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.tiempo-restante {
+    margin-bottom: 20px;
+    }
+
+h1 {
+  color: #1958b6;
+  font-size: 26px;
+  font-weight: 800;
+  margin-bottom: 6px;
+  border-radius: 20px;
+}
+
+p {
+  color: #666666;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* Contador en formato tarjetas touch */
+.countdown-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  background-color: #f8f9fa;
+  border-radius: 16px;
+  padding: 12px 8px;
+  margin-bottom: 24px;
+  border: 1px solid #eaeaea;
+}
+
+.time-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.time-value {
+  font-size: 22px;
+  font-weight: 800;
+  color: #009CD1;
+}
+
+.time-label {
+  font-size: 10px;
+  color: #888888;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+/* Inputs táctiles y cómodos */
+.form-group {
+  text-align: left;
+  margin-bottom: 16px;
+}
+
+label {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #444444;
+  margin-bottom: 6px;
+  margin-left: 2px;
+}
+
+input[type="text"],
+input[type="tel"] {
+  width: 100%;
+  height: 48px; /* Altura ideal para toque táctil */
+  padding: 0 14px;
+  font-size: 15px;
+  border: 1.5px solid #e1e4e8;
+  border-radius: 12px;
+  background-color: #fdfdfd;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+input[type="text"]:focus,
+input[type="tel"]:focus {
+  border-color: #f35728;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(37, 211, 102, 0.15);
+}
+
+/* Botón flotante/destacado táctil */
+.btn-confirmar {
+  width: 100%;
+  height: 52px;
+  background-color: #009CD1;
+  color: #ffffff;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+  box-shadow: 0 4px 14px rgba(97, 35, 16, 0.35);
+  transition: transform 0.1s ease, background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-confirmar:active {
+  transform: scale(0.98); /* Efecto al presionar en la pantalla */
+  background-color: #f35728;
+}
+
+/* Botón Flotante Mute / Unmute */
+.btn-audio-flotante {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 2px solid #d33f25;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 9999; /* Asegura que quede siempre por encima del resto del contenido */
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-audio-flotante:active {
+  transform: scale(0.9);
+}
+
+.btn-audio-flotante.mute {
+  border-color: #ff4757;
+  background-color: #ffeae8;
+}
+
+/* --- SECCIÓN UBICACIÓN --- */
+.ubicacion-container {
+  margin-top: 25px;
+  padding: 20px 0 10px 0;
+  border-top: 1px solid #eaeaea;
+}
+
+.ubicacion-container h2 {
+  font-family: 'Fredoka', cursive, sans-serif;
+  font-size: 20px;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.ubicacion-nombre {
+  font-size: 14px;
+  color: #666666;
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+
+/* Envoltorio del Mapa Adaptable a Pantallas Móviles */
+.mapa-wrapper {
+  width: 100%;
+  height: 220px; /* Altura ideal en celulares */
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 14px;
+}
+
+.mapa-wrapper iframe {
+  width: 100%;
+  height: 100%;
+}
+
+/* Botón secundario para abrir en la app de Maps */
+.btn-mapa {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 44px;
+  background-color: #f0f4f9;
+  color: #1a73e8;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.btn-mapa:active {
+  background-color: #e2eaf4;
+}

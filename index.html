@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Invitación a mi Cumpleaños</title>
+  
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.4/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+  <main class="mobile-container">
+    <div class="card">
+        <div class="card-header-img">
+            <img src="i.png" alt="Invitación Ciro" class="banner-img">
+        </div>
+
+    <div class="card-ubi-cont">
+
+        <div class="tiempo-restante">
+        <h1>¿Cuánto falta? ⏱️</h1>
+        </div>
+
+      <!-- Contador Regresivo -->
+      <div class="countdown-container">
+        <div class="time-box">
+          <span class="time-value" id="dias">00</span>
+          <span class="time-label">Días</span>
+        </div>
+        <div class="time-box">
+          <span class="time-value" id="horas">00</span>
+          <span class="time-label">Hs</span>
+        </div>
+        <div class="time-box">
+          <span class="time-value" id="minutos">00</span>
+          <span class="time-label">Min</span>
+        </div>
+        <div class="time-box">
+          <span class="time-value" id="segundos">00</span>
+          <span class="time-label">Seg</span>
+        </div>
+      </div>
+    </div>
+
+        <div class="card-ubi-img">
+            <img src="oi.png" alt="Ubicación" class="uni_img">
+        </div>
+
+    <div class="header">
+        <h1>🎈🍰 ¡Los esperamos! 🍰🎈</h1>
+        <p>Completá tus datos para confirmar tu asistencia.</p>
+    </div>
+
+      <!-- Formulario -->
+      <form id="rsvpForm" onsubmit="confirmarAsistencia(event)">
+        <div class="form-group">
+          <label for="nombre">Nombre y Apellido</label>
+          <input type="text" id="nombre" placeholder="Ej: Niño/a" required autocomplete="off">
+        </div>
+
+        <div class="form-group">
+          <label for="acompanantes">¿Con quién venís?</label>
+          <input type="text" id="acompanantes" placeholder="Ej: Voy con mamá/papá" required>
+        </div>
+
+        <div class="form-group">
+          <label for="telefono">Tu número de teléfono</label>
+          <input type="tel" id="telefono" placeholder="Ej: 11 1234-5678" required>
+        </div>
+
+        <button type="submit" class="btn-confirmar">
+          <span>Confirmar por Whatsapp</span>
+        </button>
+      </form>
+
+      <div class="ubicacion-container">
+        <!-- Mapa Responsive -->
+        <div class="mapa-wrapper">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1639.921215860992!2d-58.749466!3d-34.709154!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bceb32f16f1dc3%3A0xd2297a7aa1127880!2seventos%20el%20Principito!5e0!3m2!1ses-419!2sar!4v1791685421761!5m2!1ses-419!2sar" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="strict-origin-when-cross-origin">
+          </iframe>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+
+  <!-- Reproductor de Audio y Botón Flotante -->
+  <audio id="musicaCumple" loop>
+    <source src="miusic.mp3" type="audio/mpeg">
+  </audio>
+
+  <button id="btnAudio" class="btn-audio-flotante" onclick="toggleAudio()" aria-label="Mutear o activar música">
+    <span id="iconoAudio">🔊</span>
+  </button>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
